@@ -7,7 +7,7 @@
 namespace text_utils
 {
 
-std::vector<int> apply_xor(std::string message, std::string key)
+static std::vector<int> apply_xor(std::string message, std::string key)
 {
     std::vector<int> result;
     result.reserve(message.size());
@@ -18,7 +18,7 @@ std::vector<int> apply_xor(std::string message, std::string key)
     return result;
 }
 
-std::string apply_xor(std::vector<int> buffer, std::string key)
+static std::string apply_xor(std::vector<int> buffer, std::string key)
 {
     std::string result;
     result.reserve(buffer.size());
@@ -29,7 +29,7 @@ std::string apply_xor(std::vector<int> buffer, std::string key)
     return result;
 }
 
-std::string apply_variables(std::string source, std::map<std::string, std::string> variables)
+static std::string apply_variables(std::string source, std::map<std::string, std::string> variables)
 {
     while (true) {
         bool done = true;

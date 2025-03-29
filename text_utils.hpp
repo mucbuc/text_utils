@@ -41,6 +41,11 @@ static std::string apply_variables(std::string source, std::map<std::string, std
                     break;
                 }
                 source.replace(p, target.size(), i.second);
+
+                if (i.second.find(target) != std::string::npos) {
+                    break;
+                }
+
                 done = false;
             }
         }
